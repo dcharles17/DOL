@@ -5,6 +5,10 @@
 [build.environment]
   NODE_VERSION = "18"
 
+# Form notifications
+[[plugins]]
+  package = "@netlify/plugin-form-submissions"
+
 # Redirects and rewrites
 [[redirects]]
   from = "/patient-forms"

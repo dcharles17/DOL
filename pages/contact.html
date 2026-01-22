@@ -154,10 +154,11 @@
 
                 <div class="contact-form-section" data-aos="fade-left">
                     <h2>Send Us a Message</h2>
-                    <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                    <form id="contact-form" name="contact-page" method="POST" data-netlify="true" netlify-honeypot="bot-field">
                         <!-- Honeypot field for spam protection -->
                         <div style="display: none;">
                             <input name="bot-field" />
+                            <input type="hidden" name="form-name" value="contact-page" />
                         </div>
                         <div class="form-group">
                             <label for="first-name">First Name *</label>
