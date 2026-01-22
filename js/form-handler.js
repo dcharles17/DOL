@@ -17,11 +17,14 @@ function initContactForm() {
             submitButton.textContent = 'Sending...';
 
             try {
+                // Get form data and ensure form-name is included
+                const formData = new FormData(this);
+
                 // Submit to Netlify
                 const response = await fetch('/', {
                     method: 'POST',
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(new FormData(this)).toString()
+                    body: new URLSearchParams(formData).toString()
                 });
 
                 if (response.ok) {
