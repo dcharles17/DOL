@@ -2,50 +2,54 @@
 
 // Contact Form Handler
 function initContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    const formMessage = document.getElementById('form-message');
+    const contactForms = document.querySelectorAll('[data-netlify="true"]');
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function(e) {
+    contactForms.forEach(form => {
+        form.addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-
-            // Show loading state
+            const formMessage = form.querySelector('.form-message') || document.getElementById('form-message');
             const submitButton = this.querySelector('button[type="submit"]');
             const originalText = submitButton.textContent;
+
+            // Show loading state
             submitButton.disabled = true;
             submitButton.textContent = 'Sending...';
 
             try {
-                // Netlify handles form submission automatically
-                // Just submit the form normally
-                await fetch('/', {
+                // Submit to Netlify
+                const response = await fetch('/', {
                     method: 'POST',
                     headers: { "Content-Type": "application/x-www-form-urlencoded" },
                     body: new URLSearchParams(new FormData(this)).toString()
                 });
 
-                // Show success message
-                formMessage.className = 'form-message success';
-                formMessage.textContent = 'Thank you for your message! We\'ll get back to you within 24 hours.';
-                formMessage.style.display = 'block';
+                if (response.ok) {
+                    // Show success message
+                    if (formMessage) {
+                        formMessage.className = 'form-message success';
+                        formMessage.textContent = 'Thank you for your message! We\'ll get back to you within 24 hours.';
+                        formMessage.style.display = 'block';
 
-                // Reset form
-                contactForm.reset();
+                        // Hide message after 5 seconds
+                        setTimeout(() => {
+                            formMessage.style.display = 'none';
+                        }, 5000);
+                    }
 
-                // Hide message after 5 seconds
-                setTimeout(() => {
-                    formMessage.style.display = 'none';
-                }, 5000);
+                    // Reset form
+                    form.reset();
+                } else {
+                    throw new Error('Form submission failed');
+                }
 
             } catch (error) {
                 // Show error message
-                formMessage.className = 'form-message error';
-                formMessage.textContent = 'Something went wrong. Please try again or call us directly.';
-                formMessage.style.display = 'block';
+                if (formMessage) {
+                    formMessage.className = 'form-message error';
+                    formMessage.textContent = 'Something went wrong. Please try again or call us directly.';
+                    formMessage.style.display = 'block';
+                }
 
                 console.error('Form submission error:', error);
             } finally {
@@ -54,7 +58,7 @@ function initContactForm() {
                 submitButton.textContent = originalText;
             }
         });
-    }
+    });
 }
 
 // Form Validation
