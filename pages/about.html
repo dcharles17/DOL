@@ -21,6 +21,12 @@
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/animations.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15) !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Top Contact Bar -->
@@ -60,7 +66,7 @@
                     <li class="nav-item"><a href="articles.html" class="nav-link">Articles</a></li>
                     <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
                     <li class="nav-item"><a href="opportunities.html" class="nav-link">Careers</a></li>
-                    <li class="nav-item"><a href="patient-forms.html" class="nav-link nav-cta">Patient Forms</a></li>
+                    <li class="nav-item"><a href="https://patientregistration.denticon.com/?P=2903&O=100&PT=0" target="_blank" class="nav-link nav-cta">Patient Forms</a></li>
                 </ul>
             </div>
             <div class="nav-toggle" id="nav-toggle">
@@ -109,7 +115,7 @@
                 </div>
             </div>
 
-            <!-- Service Promise -->
+            <!-- Service Promise
             <div class="service-promise" data-aos="fade-up">
                 <div class="promise-card">
                     <div class="promise-icon">
@@ -121,43 +127,67 @@
                         <p>A SMILE... you are proud of!</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Services Overview -->
-            <div class="services-overview" data-aos="fade-up">
+            <div class="services-overview" data-aos="fade-up" style="margin-top: 4rem;">
                 <h2 class="section-title">Our Full Range of Services</h2>
-                <div class="services-list">
-                    <div class="service-item">
-                        <i class="fas fa-tooth"></i>
-                        <span>Dental Exams</span>
+                <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                    <div class="service-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #118a96, #003c72); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-tooth" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0 0 0.5rem; color: #2c3e50; font-size: 1.25rem;">Dental Exams</h3>
+                        <p style="color: #6c757d; margin: 0; font-size: 0.95rem;">Comprehensive oral health assessments</p>
                     </div>
-                    <div class="service-item">
-                        <i class="fas fa-x-ray"></i>
-                        <span>Digital X-Rays</span>
+                    <div class="service-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #118a96, #003c72); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-x-ray" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0 0 0.5rem; color: #2c3e50; font-size: 1.25rem;">Digital X-Rays</h3>
+                        <p style="color: #6c757d; margin: 0; font-size: 0.95rem;">Portable digital radiography</p>
                     </div>
-                    <div class="service-item">
-                        <i class="fas fa-hands-bubbles"></i>
-                        <span>Cleanings</span>
+                    <div class="service-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #118a96, #003c72); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-hands-bubbles" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0 0 0.5rem; color: #2c3e50; font-size: 1.25rem;">Cleanings</h3>
+                        <p style="color: #6c757d; margin: 0; font-size: 0.95rem;">Professional dental cleanings</p>
                     </div>
-                    <div class="service-item">
-                        <i class="fas fa-fill-drip"></i>
-                        <span>Fillings</span>
+                    <div class="service-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #118a96, #003c72); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-fill-drip" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0 0 0.5rem; color: #2c3e50; font-size: 1.25rem;">Fillings</h3>
+                        <p style="color: #6c757d; margin: 0; font-size: 0.95rem;">Tooth-colored composite fillings</p>
                     </div>
-                    <div class="service-item">
-                        <i class="fas fa-crown"></i>
-                        <span>Crowns</span>
+                    <div class="service-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #118a96, #003c72); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-crown" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0 0 0.5rem; color: #2c3e50; font-size: 1.25rem;">Crowns</h3>
+                        <p style="color: #6c757d; margin: 0; font-size: 0.95rem;">Custom dental crown fabrication</p>
                     </div>
-                    <div class="service-item">
-                        <i class="fas fa-syringe"></i>
-                        <span>Root Canals</span>
+                    <div class="service-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #118a96, #003c72); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-syringe" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0 0 0.5rem; color: #2c3e50; font-size: 1.25rem;">Root Canals</h3>
+                        <p style="color: #6c757d; margin: 0; font-size: 0.95rem;">Endodontic therapy on-site</p>
                     </div>
-                    <div class="service-item">
-                        <i class="fas fa-teeth-open"></i>
-                        <span>Extractions</span>
+                    <div class="service-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #118a96, #003c72); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-teeth-open" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0 0 0.5rem; color: #2c3e50; font-size: 1.25rem;">Extractions</h3>
+                        <p style="color: #6c757d; margin: 0; font-size: 0.95rem;">Safe tooth removal procedures</p>
                     </div>
-                    <div class="service-item">
-                        <i class="fas fa-star"></i>
-                        <span>Whitening</span>
+                    <div class="service-card" style="background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #118a96, #003c72); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem;">
+                            <i class="fas fa-star" style="color: white; font-size: 1.5rem;"></i>
+                        </div>
+                        <h3 style="margin: 0 0 0.5rem; color: #2c3e50; font-size: 1.25rem;">Whitening</h3>
+                        <p style="color: #6c757d; margin: 0; font-size: 0.95rem;">Professional teeth whitening</p>
                     </div>
                 </div>
             </div>
@@ -311,7 +341,7 @@
                     <h4>Resources</h4>
                     <ul>
                         <li><a href="articles.html">Articles</a></li>
-                        <li><a href="patient-forms.html">Patient Forms</a></li>
+                        <li><a href="https://patientregistration.denticon.com/?P=2903&O=100&PT=0" target="_blank">Patient Forms</a></li>
                         <li><a href="opportunities.html">Careers</a></li>
                         <li><a href="contact.html">Contact</a></li>
                     </ul>
