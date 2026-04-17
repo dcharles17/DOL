@@ -262,11 +262,35 @@
                     </div>
                 </div>
                 <div class="about-image" data-aos="fade-left">
-                    <img src="assets/images/service-3.webp" alt="Mobile Dental Care Team" class="img-fluid">
-                    <div class="image-overlay">
-                        <i class="fas fa-play-circle"></i>
-                        <span>See How We Work</span>
+                    <div style="position:relative;">
+                        <video id="about-video" controls playsinline muted class="img-fluid" style="width:100%;border-radius:inherit;">
+                            <source src="assets/images/20260327_102202.mp4" type="video/mp4">
+                        </video>
+                        <button id="music-toggle" onclick="toggleMusic()" style="position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,0.55);color:#fff;border:none;border-radius:50%;width:38px;height:38px;cursor:pointer;font-size:16px;" title="Toggle background music">
+                            <i class="fas fa-music"></i>
+                        </button>
+                        <audio id="bg-music" loop>
+                            <source src="assets/images/miromaxmusic-music-promotion-no-copyright-513944.mp3" type="audio/mpeg">
+                        </audio>
                     </div>
+                    <script>
+                        var musicPlaying = false;
+                        var music = document.getElementById('bg-music');
+                        var video = document.getElementById('about-video');
+                        function toggleMusic() {
+                            if (musicPlaying) {
+                                music.pause();
+                                document.getElementById('music-toggle').innerHTML = '<i class="fas fa-music"></i>';
+                            } else {
+                                music.play();
+                                document.getElementById('music-toggle').innerHTML = '<i class="fas fa-volume-up"></i>';
+                            }
+                            musicPlaying = !musicPlaying;
+                        }
+                        video.addEventListener('pause', function() { music.pause(); musicPlaying = false; document.getElementById('music-toggle').innerHTML = '<i class="fas fa-music"></i>'; });
+                        video.addEventListener('play', function() { music.play(); musicPlaying = true; document.getElementById('music-toggle').innerHTML = '<i class="fas fa-volume-up"></i>'; });
+                        video.addEventListener('volumechange', function() { video.muted = true; });
+                    </script>
                 </div>
             </div>
         </div>
