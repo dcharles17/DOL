@@ -336,6 +336,14 @@ p {
     font-weight: 700;
 }
 
+.hero-line-3 {
+    display: block;
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    font-weight: 400;
+    opacity: 0.85;
+    margin-top: 0.4rem;
+}
+
 .hero-subtitle {
     font-size: 1.25rem;
     margin-bottom: 2rem;
